@@ -82,7 +82,7 @@ export default function Hero() {
                 className="flex items-center gap-2 px-6 py-3 rounded border border-white/10 text-white/60 font-dm text-sm hover:border-amber-500/30 hover:text-amber-400 transition-all">
                 <Linkedin size={14} /> LinkedIn
               </a>
-              <a href="/resume.pdf" download
+              <a href="/resume.html" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded border border-amber-500/20 text-amber-400/70 font-dm text-sm hover:border-amber-500/40 hover:text-amber-400 hover:bg-amber-500/5 transition-all">
                 <Download size={14} /> Resume
               </a>

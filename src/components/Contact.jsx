@@ -33,9 +33,9 @@ export default function Contact() {
             className="flex items-center gap-3 px-10 py-4 rounded bg-amber-500 text-black font-syne font-bold text-base hover:bg-amber-400 hover:scale-105 hover:shadow-[0_0_50px_rgba(245,158,11,0.35)] transition-all">
             <Mail size={16} /> Send a Message
           </a>
-          <a href="/resume.pdf" download
+          <a href="/resume.html" target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-3 px-8 py-4 rounded border border-amber-500/30 text-amber-400 font-syne font-semibold text-base hover:bg-amber-500/10 hover:border-amber-500/50 hover:scale-105 transition-all">
-            <Download size={16} /> Download Resume
+            <Download size={16} /> View Resume
           </a>
         </motion.div>
 
