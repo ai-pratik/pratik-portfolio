@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratik Gade — Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a1a;
+      background: #f5f5f5;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .resume {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #fff;
+      padding: 36px 40px 30px;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .resume {
+        box-shadow: none;
+        padding: 28px 32px 20px;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 18px;
+      border-bottom: 2px solid #f59e0b;
+      padding-bottom: 14px;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #0e0e0e;
+      margin-bottom: 2px;
+    }
+
+    .header .tagline {
+      font-size: 12px;
+      font-weight: 600;
+      color: #b45309;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .header .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 10.5px;
+      color: #555;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .header .contact-row a {
+      color: #b45309;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #b45309;
+      border-bottom: 1px solid #fde68a;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 11px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 20px;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 8px;
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+      min-width: 140px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+    }
+
+    .skill-value {
+      color: #444;
+    }
+
+    /* Experience */
+    .job {
+      margin-bottom: 10px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0e0e0e;
+    }
+
+    .job-date {
+      font-size: 10px;
+      color: #888;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .job-company {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 1px;
+    }
+
+    .job-subtitle {
+      font-size: 10px;
+      color: #999;
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 4px;
+    }
+
+    .job ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job li {
+      font-size: 10.5px;
+      color: #333;
+      line-height: 1.55;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 1.5px;
+    }
+
+    .job li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .job li strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    /* Award badge */
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #b45309;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* Education & Additional */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .edu-detail {
+      font-size: 10.5px;
+      color: #555;
+    }
+
+    .edu-sub {
+      font-size: 10.5px;
+      color: #666;
+    }
+
+    .additional-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px 16px;
+      font-size: 10.5px;
+    }
+
+    .additional-label {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .additional-value {
+      color: #555;
+    }
+
+    /* Print button */
+    .print-bar {
+      max-width: 210mm;
+      margin: 16px auto;
+      text-align: center;
+    }
+
+    .print-btn {
+      padding: 10px 28px;
+      background: #f59e0b;
+      color: #000;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .print-btn:hover {
+      background: #d97706;
+    }
+
+    .print-hint {
+      font-size: 11px;
+      color: #888;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="print-bar no-print">
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF (Ctrl+P → Save as PDF)</button>
+    <p class="print-hint">Use your browser's Print dialog → Destination: "Save as PDF" → Save</p>
+  </div>
+
+  <div class="resume">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>PRATIK SHARAD GADE</h1>
+      <div class="tagline">Software Engineer — GenAI Lead · Automation Developer Lead (Telecom OSS/BSS)</div>
+      <div class="contact-row">
+        <span>📍 Pune, India</span>
+        <span>📞 +91 8788034004</span>
+        <span>✉ pratikgade5151@gmail.com</span>
+        <a href="https://linkedin.com/in/pratik-gade" target="_blank">🔗 linkedin.com/in/pratik-gade</a>
+        <a href="https://github.com/ai-pratik" target="_blank">🐙 github.com/ai-pratik</a>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section">
+      <div class="section-title">Professional Summary</div>
+      <div class="summary">
+        Software Engineer at Tech Mahindra with <strong>2.8+ years</strong> of experience in telecom OSS/BSS automation
+        and <strong>Generative AI engineering</strong>.
+        Specializing in Order Journeys, Billing, and Lead-to-Cash automation for BT Openreach (UK) — a Tier-1 CSP.
+        Conceived and delivered a <strong>GenAI-powered automation platform</strong> (similar to n8n) integrating Claude
+        and Amazon Q to orchestrate complex telecom workflows — widely adopted across IBU.
+        Building <strong>production-ready RAG systems</strong> with LangGraph, multi-agent orchestration with AGNO &
+        Google ADK, and LLMs from scratch.
+        Recipient of the <strong>BRAVO Award</strong> for innovation, execution excellence, and leadership.
+      </div>
+    </div>
+
+    <!-- CORE SKILLS -->
+    <div class="section">
+      <div class="section-title">Core Skills</div>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-label">AI Agents & RAG</span>
+          <span class="skill-value">LangGraph, LangChain, AGNO, Google ADK, Amazon Bedrock, Multi-Agent
+            Orchestration</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">LLM & GenAI</span>
+          <span class="skill-value">Claude API, Amazon Q, OpenAI, Prompt Engineering, LLM from Scratch, FlashRank</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Vector & Search</span>
+          <span class="skill-value">Qdrant, Word Embeddings, Dense + BM25 Hybrid Retrieval, RAG Pipelines</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Telecom BSS/OSS</span>
+          <span class="skill-value">Netcracker RBM, Order Journeys, Billing, Mediation, Lead-to-Cash, Revenue
+            Assurance</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend & APIs</span>
+          <span class="skill-value">Python, Spring Boot, FastAPI, Flask, Shell/Bash, Oracle SQL, PL/SQL, REST
+            APIs</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Frontend & Tools</span>
+          <span class="skill-value">React (Vite), Streamlit, Gradio, Ollama, Docker, n8n, Git, Linux/Unix</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Automation Developer Lead — Telecom Order Journeys (OSS/BSS)</span>
+            <span class="award-badge">🏆 BRAVO AWARD</span>
+          </div>
+          <span class="job-date">Sep 2023 – Present</span>
+        </div>
+        <div class="job-company">Tech Mahindra Ltd. — Client: BT Openreach (UK)</div>
+        <div class="job-subtitle">Telecom OSS/BSS · GenAI Platform · Billing Automation</div>
+        <ul>
+          <li><strong>Conceived, architected & delivered a GenAI-powered automation platform</strong> (n8n-like)
+            integrating Claude & Amazon Q for LLM-driven telecom workflow orchestration — adopted across IBU</li>
+          <li>Advanced prompt engineering & contextual automation with intelligent validation layers and reusable AI
+            workflow templates</li>
+          <li>Led large-scale automation across Order Journeys, Billing, and Lead-to-Cash workflows for Tier-1 CSP</li>
+          <li>Integrated Netcracker RBM core BSS APIs for account creation, order validation, and billing readiness</li>
+          <li>Engineered Python-based GBSF parser transforming complex fixed-width telecom data into structured datasets
+          </li>
+          <li>PL/SQL-driven analysis for order fallouts, billing discrepancies, and revenue-impacting issues</li>
+          <li>Standardized automation assets improving OSS/BSS ecosystem maturity and operational efficiency</li>
+          <li><strong>Awarded BRAVO Award</strong> for innovation, execution excellence, and measurable business impact
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Database & Web Application Development Intern</span>
+          <span class="job-date">Internship</span>
+        </div>
+        <div class="job-company">Kaizen Engineers</div>
+        <ul>
+          <li>Developed database-driven web applications using PHP, MySQL, HTML/CSS, and JavaScript</li>
+          <li>Designed ER diagrams and implemented backend logic for internal business applications</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AI & OPEN SOURCE PROJECTS -->
+    <div class="section">
+      <div class="section-title">AI & Open Source Projects</div>
+      <div class="job">
+        <ul>
+          <li><strong>Production RAG Agent</strong> — Built a fully local, production-ready RAG system with hybrid BM25
+            + Dense Vector search, FlashRank reranking, LangGraph orchestration, Qdrant vector DB, and Ollama. No API
+            keys needed.</li>
+          <li><strong>Multi-Agent Research System</strong> — Orchestrated multi-agent pipelines using AGNO framework
+            with Google ADK & Amazon Bedrock for parallel research and synthesis.</li>
+          <li><strong>LLM from Scratch</strong> — Implemented word embeddings, tokenization, and transformer attention
+            mechanisms from ground up using Python and NumPy.</li>
+          <li><strong>GenAI Automation Platform</strong> — n8n-like workflow orchestrator with Claude & Amazon Q
+            integration for enterprise telecom automation (BRAVO Award winner).</li>
+          <li><strong>GBSF Parser Framework</strong> — Python engine transforming complex fixed-width telecom data into
+            structured datasets for BT Openreach.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-row">
+        <span class="edu-title">Bachelor of Engineering — Computer Engineering</span>
+        <span class="edu-detail">CGPA: 9.12</span>
+      </div>
+      <div class="edu-sub">Sinhgad Institute of Technology, Lonavala</div>
+    </div>
+
+    <!-- ADDITIONAL -->
+    <div class="section">
+      <div class="section-title">Additional</div>
+      <div class="additional-grid">
+        <div><span class="additional-label">Experience:</span> <span class="additional-value">3+ Years</span></div>
+        <div><span class="additional-label">Leadership:</span> <span class="additional-value">Chairperson — SIT ACM
+            Chapter</span></div>
+        <div><span class="additional-label">Languages:</span> <span class="additional-value">English, Marathi,
+            Hindi</span></div>
+        <div><span class="additional-label">Award:</span> <span class="additional-value">BRAVO Award — Tech
+            Mahindra</span></div>
+        <div><span class="additional-label">Certifications:</span> <span class="additional-value">MongoDB (MongoDB
+            Univ.), COVID-19 (WHO)</span></div>
+        <div><span class="additional-label">Editorship:</span> <span class="additional-value">Editor-in-Chief — Dept.
+            Magazine (3 yrs)</span></div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
