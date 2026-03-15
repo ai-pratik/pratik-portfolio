@@ -9,6 +9,7 @@ import Projects from './components/Projects'
 import GitHubProjects from './components/GitHubProjects'
 import Contact from './components/Contact'
 import BackToTop from './components/BackToTop'
+import PhotoGallery from './components/PhotoGallery'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Skills />
         <Projects />
         <GitHubProjects />
+        <PhotoGallery />
         <Contact />
       </main>
       <BackToTop />
